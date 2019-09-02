@@ -1,0 +1,256 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 11;
+	margin: 0;
+	transition: all .2s ease-in-out;
+	background: linear-gradient(to bottom, rgba(162,122,115,.25) 0%,rgba(229,229,229,0) 80%);
+	
+	.container-fluid {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	
+	.header-top {
+		height: 90px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: all .2s ease-in-out;
+		
+		.logo-wrap {
+			margin-top: -10px;
+			font-family: $playfair;
+			color: white;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: 32px;
+			transition: all .2s ease-in-out;
+			
+			&:hover {
+				color: $grey;
+			}
+		}
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		clear: both;
+		display: flex;
+		align-items: center;
+		
+		li {
+			line-height: 24px;
+			font-size: 16px;
+		}
+		
+		// Main navigation
+		&.nav {
+			
+			li {
+				transition: all .3s;
+				
+				+ li {
+					margin-left: 20px;
+				}
+				
+				a {
+					display: block;
+					font-size: 12px;
+					color: white;
+					text-transform: uppercase;
+					letter-spacing: 0.15em;
+					@include underline;
+				}
+			}
+		}
+	}
+	
+	.mobile-trigger {
+		display: none;
+	}
+	
+	&.minimize {
+		background: white;
+		box-shadow: 0 1px 20px 1px rgba(162,122,115,.25);
+		
+		.header-top {
+			height: 66px;
+			justify-content: center;
+		}
+		
+		.logo-wrap {
+			color: $bodyfontcolor;
+			font-size: 20px;
+			margin-top: -5px;
+			margin-right: 20px;
+			
+			&:hover {
+				color: $orange;
+			}
+		}
+		
+		.nav-menu {
+			
+			
+			ul.nav {
+				li {
+					a {
+						color: $bodyfontcolor;
+						@include reset-underline;
+						
+						&:hover, &.active {
+							color: $orange;
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+}
+
+@media (min-width: 1199px) and (max-width: 1400px) {
+	header.minimize {
+		.nav-menu {
+			.container {
+				// background: red;
+				margin-left: 113px;
+				margin-right: 113px;
+			}
+		}
+	}
+}
+
+// desktop normal and tablet landscape ( max-width 1199px )
+@include media-breakpoint-down(lg) {
+	header, header.minimize {
+		background: white;
+		box-shadow: 0 1px 20px 1px rgba(162,122,115,.25);
+		
+		.header-top {
+			height: 66px;
+			justify-content: center;
+			
+			.logo-wrap {
+				color: $bodyfontcolor;
+				font-size: 20px;
+				margin-top: -5px;
+				margin-right: 20px;
+				
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+		.nav-menu {
+			
+			ul.nav {
+				li {
+					a {
+						color: $bodyfontcolor;
+						@include reset-underline;
+						
+						&:hover, &.active {
+							color: $orange;
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+}
+
+// desktop small and tablet potrait ( max-width 991px )
+@include media-breakpoint-down(md) {
+	
+}
+
+// mobile potrait and landscape ( max-width 767px )
+@include media-breakpoint-down(sm) {
+	
+	header, header.minimize {
+		.nav-menu {
+			display: none;
+			
+		}
+
+		.logo-wrap {
+			margin-right: 0;
+		}
+
+		$box: 30px;
+		.mobile-trigger {
+			display: none;
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			transform: translate3d(0,-50%,0);
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+			$weight: 2px;
+
+			.mid {
+				height: $weight;
+				width: 100%;
+				background-color: #918f8f;
+				transform: translate3d(0,-50%,0);
+				position: absolute;
+				top: 50%;
+				transition: opacity .35s ease;
+			}
+
+			$margin: 5px;
+			&::before, &::after {
+				content: '';
+				display: block;
+				height: $weight;
+				width: 100%;
+				background-color: #918f8f;
+				position: absolute;
+				top: $margin;
+			}
+
+			&::after {
+				top:auto;
+				bottom: $margin;
+			}
+
+			&.opened {
+				.mid {
+					opacity: 0;
+				}
+
+				&::before {
+					animation: openTopAnim .35s forwards ease-in-out 1;
+				}
+
+				&::after {
+					animation: openBotAnim .35s forwards ease-in-out 1;
+				}
+			}
+
+			&.closed {
+				&::before {
+					animation: closedTopAnim .35s forwards ease-in-out 1;
+				}
+
+				&::after {
+					animation: closedBotAnim .35s forwards ease-in-out 1;
+				}
+			}
+		}
+	}
+}
+//small mobile (max-width 480px)
+@include media-breakpoint-down(xs) {
+	
+}

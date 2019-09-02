@@ -1,0 +1,38 @@
+{
+  "name": "waitForImages",
+  "version": "2.2.0",
+  "homepage": "https://github.com/alexanderdickson/waitForImages",
+  "authors": [
+    "Alex Dickson <alex@alexanderdickson.com>"
+  ],
+  "description": "Provides callbacks for image loading events",
+  "main": "src/jquery.waitforimages.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "images"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8"
+  },
+  "_release": "2.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.0",
+    "commit": "e612f16416229d35a6662e0e24da38b796230099"
+  },
+  "_source": "https://github.com/alexanderdickson/waitForImages.git",
+  "_target": "^2.2.0",
+  "_originalSource": "waitForImages",
+  "_direct": true
+}

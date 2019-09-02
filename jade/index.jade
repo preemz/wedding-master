@@ -1,0 +1,291 @@
+//- styleguide.jade
+- var title = "Agung & Aca"
+- var page = "Homepage"
+include ./includes/variable.jade
+
+doctype html
+html(lang="id")
+
+	// html head
+	head
+		include ./includes/head.jade
+
+	// body
+	body(data-spy="scroll" data-target=".nav-menu" data-offset="100")
+		// page header
+		include ./includes/header.jade
+
+		// page main
+		main(role="main").resize
+			audio(autoplay control loop)
+				source(src="img/sound-01.mp3" type="audio/mpeg")
+			.sound-toggle
+				span.fa.fa-music
+			section.home#home
+				.slider-component
+					.slider-wrap
+						.slider-text
+							h1 Agung & Aca
+							h2 22 APRIL 2018
+						.slider-img
+							img(data-lazy="img/common/slider-01.JPG")
+					.slider-wrap
+						.slider-text
+							h1 Agung & Aca
+							h2 22 APRIL 2018
+						.slider-img
+							img(data-lazy="img/common/slider-02.jpg")
+					.slider-wrap
+						.slider-text
+							h1 Agung & Aca
+							h2 22 APRIL 2018
+						.slider-img
+							img(data-lazy="img/common/slider-03.JPG")
+					.slider-wrap
+						.slider-text
+							h1 Agung & Aca
+							h2 22 APRIL 2018
+						.slider-img
+							img(data-lazy="img/common/slider-04.jpg")
+				.mouse-down
+			section.counter#counter
+				.container
+					.title
+						h2 Count Down
+						.description
+							p <em>Countdown</em> menuju hari pernikahan Agung dan Aca pada <b class="color-pink">22 April 2018</b>.
+					.counter-init
+			section.parallax.story#story(data-image="img/common/bg-parallax.jpg")
+				.container
+					.title
+						h2 Story
+						.description
+							p
+								| Every love story is beautiful, ours too. 
+								i.color-pink.fa.fa-heart
+					.story-component
+						.img-wrap
+							img(src="img/common/story-01.jpg")
+						.story-wrap
+							h3 Kariska Iswari Yasa <span class="color-pink">THE BRIDE</span>
+							.description
+								p Wanita yang memiliki panggilan Aca, putri pertama Bapak Iyus Yusman dan Ibu Ika Rustika.
+								p Lahir di Sukabumi pada 31 Desember 1994.
+								.sosmed
+									a(href="https://www.instagram.com/acakariska/")
+										i.fa.fa-instagram
+									a(href="https://www.linkedin.com/in/kariska-iswari-yasa-260830124/")
+										i.fa.fa-linkedin
+					.story-component
+						.story-wrap
+							h3 Agung Dwi Lambang Gito Santoso <span class="color-pink">THE GROOM</span>
+							.description
+								p Pria yang memiliki panggilan Agung / Io, putra kedua dari Bapak dr. Tri Astono (ALM) dan Ibu Hj. Tri Aswati Rahayu.
+								p Lahir di Tulungagung pada 26 November 1989.
+								.sosmed
+									a(href="https://www.instagram.com/agungdlgs/")
+										i.fa.fa-instagram
+									a(href="https://www.linkedin.com/in/agungdlgs/")
+										i.fa.fa-linkedin
+						.img-wrap
+							img(src="img/common/story-02.jpg")
+			section.timeline
+				.container
+					.timeline-component
+						.item
+							.icon
+								span.fa.fa-comments
+							.text-wrapper
+								h2 Perkenalan Facebook <small>7 Februari 2014</small> & Pertemuan Bogor <small>16 Maret 2014</small>
+								p "Orang bilang, pertemuan pertama selalu kebetulan. Tapi, bagaimana caramu menjelaskan pertemuan-pertemuan kita selanjutnya? Apakah Tuhan campur tangan di dalamnya?"
+								.quote-name -Orizuka-
+						.item.right
+							.icon
+								span.fa.fa-phone
+							.text-wrapper
+								h2 3 tahun Long Distance Relationship
+								p "Jarak itu sebenarnya tak pernah ada. Pertemuan dan perpisahan dilahirkan oleh perasaan."
+								.quote-name -Joko Pinurbo-
+						.item
+							.icon
+								span.fa.fa-handshake
+							.text-wrapper
+								h2 Akhirnya Berada di Kota yang Sama, Bandung <small>24 Februari 2017</small>
+								p "Dan Bandung bagiku bukan cuma masalah geografis, lebih jauh dari itu melibatkan perasaan, yang bersamaku ketika sunyi"
+								.quote-name -Pidi Baiq-
+						.item.right
+							.icon
+								span.fa.fa-heart
+							.text-wrapper
+								h2 Lamaran <small>17 Desember 2017</small> & Pernikahan <small>22 April 2018</small>
+								p "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+								.quote-name -When Harry Met Sally-
+							
+			section.location.parallax#location(data-image="img/common/bg-parallax.jpg")
+				.container
+					.title
+						h2 Location
+						.description
+							p Pernikahan akan di selenggarakan di Gedung DISEN, Desa Cisaat, Kota Sukabumi. Kota Sukabumi terletak di 100 KM sebelah tenggara dari Kota Bogor, 50 KM sebelah Barat Daya dari Kota Cianjur dan 100 KM dari Kota Bandung.
+			section.location-map#map
+
+			section.wishlist#wishlist
+				.container
+					.title
+						h2 Wishlist
+						.description
+							p Terima Kasih untuk teman / saudara yang telah mengabulkan <em>wishlist</em> kami.
+					.wishlist-component
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-01.jpg")
+								.info-wrapper
+									.title
+										h2 Microwave Oven
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-02.jpg")
+								.info-wrapper
+									.title
+										h2 Kompor Induksi
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+											
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-03.jpg")
+								.info-wrapper
+									.title
+										h2 Jam Dinding
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+											
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-04.jpg")
+								.info-wrapper
+									.title
+										h2 Dispenser
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+											
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-05.jpg")
+								.info-wrapper
+									.title
+										h2 Lemari Pakaian
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+											
+							//- .granted-by
+							//- 	a(href="#")
+							//- 		img(src="img/common/people-dummy.png" alt="people-01")
+							//- 	a(href="#")
+							//- 		img(src="img/common/people-dummy.png" alt="people-01")
+							//- 	a(href="#")
+							//- 		img(src="img/common/people-dummy.png" alt="people-01")
+							//- 	a(href="#")
+							//- 		img(src="img/common/people-dummy.png" alt="people-01")
+							//- 	a(href="#")
+							//- 		img(src="img/common/people-dummy.png" alt="people-01")
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-06.jpg")
+								.info-wrapper
+									.title
+										h2 Mixer
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+											
+							//- .granted-by
+							//- 	a(href="#")
+							//- 		img(src="img/common/people-dummy.png" alt="people-01")
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-07.jpg")
+								.info-wrapper
+									.title
+										h2 Alat Masak Induksi
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-08.jpg")
+								.info-wrapper
+									.title
+										h2 Setrika Uap
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-09.jpg")
+								.info-wrapper
+									.title
+										h2 Blender
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+						.item
+							.card
+								.img-wrapper
+									img(src="img/common/wishlist-10.jpg")
+								.info-wrapper
+									.title
+										h2 Air Conditioner
+									.links
+										a(href="https://goo.gl/forms/XcYVYRNkitBYTsEa2" target="_blank") 
+											| Kabulkan
+								
+						
+							
+			section.gallery#gallery
+				.container
+					.title
+						h2 Gallery
+						.description
+							p We keep this love in a photograph, We made these memories for ourselves <span class="color-pink">-Ed Sheeran-</span>
+				.gallery-component
+					.img-wrapper
+						img(src="img/gallery/gallery-03.jpg")
+					.img-wrapper
+						img(src="img/gallery/gallery-01.jpg")
+					.img-wrapper
+						img(src="img/gallery/gallery-02.jpg")
+					.img-wrapper
+						img(src="img/gallery/gallery-10.jpg")
+					.img-wrapper
+						img(src="img/gallery/gallery-05.jpg")
+					.img-wrapper
+						img(src="img/gallery/gallery-06.jpg")
+					.img-wrapper
+						img(src="img/gallery/gallery-09.jpg")
+					.img-wrapper
+						img(src="img/gallery/gallery-08.jpg")
+
+		footer
+			span made with
+			span.fa.fa-heart
+			span by
+			a(href="https://www.instagram.com/agungdlgs/" target="_blank") agungdlgs
+		// page script
+		include ./includes/script.jade

@@ -1,0 +1,24 @@
+- var srcImagePortrait = "img/testing/image-portrait.jpg"
+- var srcImageLandscape = "img/testing/image-landscape.jpg"
+- var srcImagePortraitSmall = "img/testing/image-portrait-small.jpg"
+- var srcImageLandscapeSmall = "img/testing/image-landscape-small.jpg"
+
+- var textLong = "Lorem ipsum dolor sit amet, brute nullam nam in, sale consetetur intellegebat eos ad, vim ea quas audiam pertinax. Nec possit quodsi vulputate ut, docendi praesent iracundia ad qui. His veniam expetendis cu, wisi inermis suavitate vis et. Mei ex nominati efficiendi. Quodsi audire te sit, ei nec tota mollis placerat, homero graece aperiri sea ei."
+- var text30 = "Lorem ipsum dolor sit ametiea"
+- var text25 = "Lorem ipsum dolor sitasu"
+- var text20 = "Lorem ipsumu dolori"
+- var text15 = "Lorem ipsum do"
+- var text10 = "Lorem ipsu"
+
+mixin menu(texts)
+	ul.menu
+		each text in texts
+			li!= '<a (href="#")>' + text + '</a>'
+
+mixin img-cover(src, position)
+	.img-wrap.cover
+		img(src="#{src}" class="#{position}")
+
+mixin img-contain(src, position)
+	.img-wrap.contain
+		img(src="#{src}" class="#{position}")

@@ -1,0 +1,96 @@
+// desktop normal and tablet landscape ( max-width 1199px )
+@include media-breakpoint-down(lg) {
+
+	header {
+
+	}
+
+	main[ role="main" ] {
+		margin-top: 66px;
+
+		&.minimize {
+			margin-top: 66px;
+		}
+
+		.container {
+			max-width: 100%;
+			width: 100%;
+			padding: 0 32px;
+		}
+
+		.content {
+			.container {
+				padding: 0 32px;
+			}
+		}
+	}
+
+	footer {
+
+	}
+}
+
+// desktop small and tablet potrait ( max-width 991px )
+@include media-breakpoint-down(md) {
+
+	header {
+
+	}
+
+	main[ role="main" ] {
+
+	}
+
+	footer {
+
+	}
+}
+
+// mobile potrait and landscape ( max-width 767px )
+@include media-breakpoint-down(sm) {
+
+	header {
+
+	}
+
+	main[ role="main" ] {
+		.container {
+			padding: 0 10px;
+		}
+
+		.content {
+			padding: 25px 0 25px;
+
+			.container {
+				padding: 0 10px;
+			}
+
+			&:nth-child(2) {
+				padding-top: 25px;
+			}
+
+			&:last-child {
+				padding-bottom: 50px;
+			}
+		}
+	}
+
+	footer {
+
+	}
+}
+//small mobile (max-width 480px)
+@include media-breakpoint-down(xs) {
+
+	header {
+
+	}
+
+	main[ role="main" ] {
+
+	}
+
+	footer {
+
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "p-boilerplate",
+  "version": "0.1.0",
+  "authors": [
+    "bintang@xtremax.com"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./js/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "3.1.0",
+    "modernizr": "~2.8.3",
+    "bootstrap": "v4.0.0-alpha.3",
+    "bourbon": "^4.2.7",
+    "tether": "^1.4.0",
+    "jquery-nice-select": "^1.1.0"
+  }
+}

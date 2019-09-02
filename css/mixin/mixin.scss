@@ -1,0 +1,343 @@
+// change old text-decoration: underline effect to new one
+@mixin underline {
+	text-decoration: none;
+	transition: all .3s;
+
+	&:hover {
+		text-decoration: none;
+		box-shadow: inset 0 -1px 0 0;
+	}
+}
+
+// reset underline above to old one
+@mixin reset-underline {
+	&:hover {
+		box-shadow: none;
+	}
+}
+
+// mixin to add costum underline
+@mixin bottom-ruler {
+	display: block;
+	content: '';
+	width: 73px;
+	height: 3px;
+	margin: 20px 0 30px;
+	background: $orange;
+}
+
+// mixin for text style guide
+@mixin default-text($text-name) {
+  $text-styles: map-get($default-text-styles, $text-name);
+
+	font-family: map-get($text-styles, "font-family");
+  font-weight: map-get($text-styles, "font-weight");
+  font-size: map-get($text-styles, "font-size");
+	line-height: map-get($text-styles, "line-height");
+
+  @if $text-name == "button" {
+    text-transform: uppercase;
+  }
+}
+// define typograph general style below
+// you can add more / remove these according to the needs
+$default-text-styles: (
+"h1": (
+"font-family": $playfair,
+"font-weight": 400,
+"font-size": 3.0rem,
+"line-height": normal
+),
+"h2": (
+"font-family": $playfair,
+"font-weight": 400,
+"font-size": 2.0rem,
+"line-height": normal
+),
+"h3": (
+"font-family": $playfair,
+"font-weight": 400,
+"font-size": 2.0rem,
+"line-height": normal
+),
+"h4": (
+"font-family": "Raleway",
+"font-weight": 600,
+"font-size": 1.6rem,
+"line-height": normal
+),
+"body-text": (
+"font-family" : "Montserrat",
+"font-weight": 500,
+"font-size": 1.4rem,
+"line-height": 20px
+),
+"button-text": (
+"font-family" : "Montserrat",
+"font-weight": 600,
+"font-size": 1.2rem,
+"line-height": normal
+),
+"footer-text": (
+"font-family" : "Montserrat",
+"font-weight": 400,
+"font-size": 1.1rem,
+"line-height": normal
+)
+);
+
+// placeholder style
+@mixin placeholdera($size,$style,$color) {
+	&::-webkit-input-placeholder {
+		font-style: $style;
+		font-size: $size;
+		color: $color;
+	}
+
+	&:-moz-placeholder {
+		font-style: $style;
+		font-size: $size;
+		color: $color;
+	}
+
+	&::-moz-placeholder {
+		font-style: $style;
+		font-size: $size;
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		font-style: $style;
+		font-size: $size;
+		color: $color;
+	}
+}
+
+// thumbnail image crop cover
+@mixin cover( $width, $height ) {
+	width: $width;
+	height: $height;
+	// overflow: hidden;
+	position: relative;
+	border: 1px solid red;
+	margin: 100px auto;
+
+	img {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		height: 100%;
+		width: auto;
+		left: 50%;
+		@include translateX(-50%);
+
+		&.left {
+			left: 0;
+			@include translateX(0);
+		}
+
+		&.right {
+			left: auto;
+			right: 0;
+			@include translateX(0);
+		}
+
+		&.portrait {
+			width: 100%;
+			height: auto;
+			top: 50%;
+			left: 0;
+			@include translateY(-50%);
+
+			&.top {
+				top: 0;
+				@include translateY(0);
+			}
+
+			&.bottom {
+				bottom: 0;
+				top: auto;
+				@include translateY(0);
+			}
+		}
+
+	}
+}
+
+// thumbnail image crop contain
+@mixin contain( $width, $height ) {
+	width: $width;
+	height: $height;
+	// overflow: hidden;
+	position: relative;
+	border: 1px solid red;
+	margin: 0 auto;
+
+	img {
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: auto;
+		top: 50%;
+		left: 0;
+		@include translateY(-50%);
+
+		&.top {
+			top: 0;
+			@include translateY(0);
+		}
+
+		&.bottom {
+			bottom: 0;
+			top: auto;
+			@include translateY(0);
+		}
+
+		&.portrait {
+			top: 0;
+			height: 100%;
+			width: auto;
+			left: 50%;
+			@include translateX(-50%);
+
+			&.left {
+				left: 0;
+				@include translateX(0);
+			}
+
+			&.right {
+				left: auto;
+				right: 0;
+				@include translateX(0);
+			}
+		}
+	}
+}
+
+@mixin clearfix() {
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
+
+// parallax scss
+// Magic parallax mixins
+
+// $parallax-perspective : 1 !default;
+// $parallax-element     : "body" !default;
+// $parallax-ios         : true !default;
+//
+// @mixin parallax-init(
+// $perspective  : $parallax-perspective,
+// $element      : $parallax-element,
+// $parallax-ios : $parallax-ios
+// ) {
+// 	@if $element == "body" {
+// 		html, body {
+// 			width: 100%;
+// 			height: 100%;
+// 			margin: 0;
+// 			padding: 0;
+// 			overflow: hidden;
+// 		}
+// 	}
+// 	#{$element} {
+// 		overflow: auto;
+// 		perspective: $perspective * 1px;
+// 		transform-style: preserve-3d;
+// 		// Allows for smooth scrolling but disables parallax effects.
+// 		@if $parallax-ios == false {
+// 			-webkit-overflow-scrolling: touch;
+// 		}
+// 		// Preserve 3D
+// 		&, * {
+// 			transform-style: preserve-3d;
+// 		}
+// 	}
+// }
+//
+// @mixin parallax(
+// $distance    : 0,
+// $perspective : $parallax-perspective
+// ) {
+// 	transform:
+// 	translateZ($distance * $perspective * 1px)
+// 	scale(abs($distance - 1))
+// 	;
+// 	z-index: $distance * 1000;
+// }
+//
+// // End of magic parallax mixins
+//
+//
+//
+//
+// @import url(https://fonts.googleapis.com/css?family=Roboto:100);
+// $primary: #1586D1;
+//
+// @include parallax-init;
+//
+// .container {
+// 	:nth-child(1) {
+// 		@include parallax(-.4);
+// 		top: 200px;
+// 		left: 200px;
+// 	}
+// 	:nth-child(2) {
+// 		@include parallax(.2);
+// 		top: 200px;
+// 		left: 500px;
+// 	}
+// 	:nth-child(3) {
+// 		@include parallax(.3);
+// 		top: 400px;
+// 		left: 600px;
+// 	}
+// 	:nth-child(4) {
+// 		@include parallax(.1);
+// 		top: 500px;
+// 		left: 500px;
+// 	}
+// 	:nth-child(5) {
+// 		@include parallax(-2);
+// 		top: 2000px;
+// 		left: 2000px;
+// 	}
+// 	:nth-child(6) {
+// 		@include parallax(.4);
+// 		top: 600px;
+// 		left: 300px;
+// 	}
+// 	:nth-child(7) {
+// 		@include parallax(-1);
+// 		top: 400px;
+// 		left: 1000px;
+// 	}
+// 	:nth-child(8) {
+// 		@include parallax(-.4);
+// 		top: 100px;
+// 		left: 1400px;
+// 	}
+// 	:nth-child(9) {
+// 		@include parallax(.4);
+// 		top: 900px;
+// 		left: 500px;
+// 	}
+// 	:nth-child(10) {
+// 		@include parallax(-1);
+// 		top: 1600px;
+// 		left: 100px;
+// 	}
+// 	padding: 10%;
+// 	max-width: 40em;
+// 	margin: auto;
+// 	> * {
+// 		position: absolute;
+// 	}
+// }
+// h2 {
+//   font-size: 3em;
+//   @include parallax(.2);
+// }
